@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Invitación</title>
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+   
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background-image: url("recursos/sin-texto.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: black;
+	font-family: 'TangerineBold', serif;
+}
+
+        .contenedor {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+	
+   
+}
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff2d55;
+        }
+		
+		/* Base para móviles */
+.contenedor {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Computadoras */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .contenedor {
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+.descripcion {
+    font-size: 1.3rem;
+    max-width: 90%;
+}
+
+.countdown {
+    font-size: 3.8rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.icono {
+    margin: 10px 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.icono-svg {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+/* textos */
+.info-item h2,
+.info-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* link ubicación */
+.info-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+	 font-size: 3rem;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'TangerineBold';
+    src: url('recursos/Tangerine-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.contenedor {
+    font-size: 2.3rem;
+}
+
+.contenedor h1 {
+    font-size: 4.8rem;
+}
+
+.contenedor h2 {
+    font-size: 3.6rem;
+}
+
+.contenedor h3 {
+    font-size: 3.6rem;
+}
+
+.contenedor p {
+    font-size: 2.9rem;
+}
+
+.contenedor button {
+    font-size: 2.9rem;
+}
+    </style>
+
+</head>
+
+<body>
+
+    
+<script>
+const eventDate = new Date("June 25, 2026 19:00:00").getTime();
+
+const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        ` ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "🎉 ¡Hoy es el evento!";
+    }
+}, 1000);
+</script>
+
+ <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
