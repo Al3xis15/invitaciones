@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Invitación</title>
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+   
+
+    <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("recursos/quince.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'TangerineBold', serif;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+
+#btnMusica{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* espacio entre iconos */
+
+    background: transparent;
+    border: 2px solid white; /* contorno blanco */
+    border-radius: 50px;     /* bordes redondeados */
+    padding: 12px 20px;
+	cursor: pointer;
+
+}
+
+.icono-musica{
+    width: 50px;
+    height: auto;
+    display: block;
+}
+
+/* contenedor fila */
+.info-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: 15px auto;
+}
+
+/* cada mitad */
+.half{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* divisor vertical elegante */
+.divider{
+    width: 2px;
+    height: 80px;
+    background: white;
+    opacity: 0.7;
+    border-radius: 2px;
+    margin: 0 10px;
+}
+
+.contenedor {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 10px; /* mejor que space-between */
+}
+
+.foto-lugar {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+		
+
+/* Tablets */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+}
+
+
+
+/* Computadoras */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .contenedor {
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+.descripcion {
+    max-width: 500px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.icono {
+    margin: 10px 0;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.icono-svg {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+/* textos */
+.info-item h2,
+.info-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+/* link ubicación */
+.info-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+	 font-size: 4rem;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.seccion-itinerario {
+    text-align: center;
+    margin: 30px 0;
+    padding: 10px;
+}
+
+.seccion-itinerario h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.img-itinerario {
+    width: 100%;
+    max-width: 600px;  /* evita que se haga enorme en PC */
+    height: auto;
+    border-radius: 10px;
+}
+
+@font-face {
+    font-family: 'TangerineBold';
+    src: url('recursos/Tangerine-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.contenedor h1 {
+    font-size: 4.6rem;
+}
+
+.contenedor h2 {
+    font-size: 3.6rem;
+}
+
+.contenedor h3 {
+    font-size: 3.6rem;
+}
+
+.contenedor p {
+    font-size: 3.2rem;
+}
+
+.contenedor button {
+    font-size: 2rem;
+}
+
+		@media (max-width: 768px) {
+
+    .contenedor {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2, h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .info-item a {
+        font-size: 2.8rem;
+    }
+	
+	.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+    .icono-svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .countdown {
+        font-size: 3rem;
+    }
+	
+	 .info-row{
+        flex-direction: column;
+    }
+
+    .divider{
+        width: 80%;
+        height: 2px;
+        margin: 10px 0;
+    }
+}
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+    <div class="icono"></div>
+
+    <h1>¡Estás invitado!</h1>
+    <h2>Mis XV años Elizabeth </h2>
+    <p class="descripcion"> 
+       
+	   Me encantaría que me acompañes en este día tan especial.  
+       
+    </p>
+
+    <!-- CUENTA REGRESIVA -->
+<div class="info-item countdown">
+    <img src="recursos/2sand.svg" class="icono-svg">
+    <div>
+        <div id="countdown" class="countdown"></div>
+    </div>
+</div>
+
+<!-- FECHA + HORA -->
+<div class="info-row">
+
+    <!-- FECHA -->
+    <div class="info-item half">
+        <img src="recursos/2date.svg" class="icono-svg">
+        <div>
+            <h2>30/Junio/2026</h2>
+        </div>
+    </div>
+
+    <!-- DIVISOR -->
+    <div class="divider"></div>
+
+    <!-- HORA -->
+    <div class="info-item half">
+        <img src="recursos/2time.svg" class="icono-svg">
+        <div>
+            <p>Hora: 7pm</p>
+        </div>
+    </div>
+
+</div>
+
+
+		<button id="btnMusica" type="button">
+		 Reproducir Musica
+         <img src="recursos/disco.svg" alt="" class="icono-musica">
+         <img src="recursos/nota.svg" alt="" class="icono-musica">
+        </button>
+
+    <!-- UBICACIÓN -->
+<div class="info-item">
+
+    <img src="recursos/sumiya.png" class="foto-lugar">
+
+    <div>
+        <a href="https://maps.app.goo.gl/54nLaTaRcMG64sTn6" target="_blank">
+            Maps → Grand Fiesta Americana Sumiya Cuernavaca
+        </a>
+    </div>
+</div>
+
+    <br>
+
+<a
+    href="https://wa.me/5216633191218?text=Hola,%20confirmo%20mi%20asistencia%20al%20evento%20(:"
+    target="_blank"
+    class="btn-confirmar">
+     <button>Confirmar asistencia</button>
+</a>
+
+<!-- ITINERARIO -->
+<div class="seccion-itinerario">
+
+    <h2>Itinerario</h2>
+
+    <img src="recursos/4itinerario.png" alt="Itinerario del evento" class="img-itinerario">
+
+</div>
+
+<audio id="musica" loop>
+    <source src="recursos/marryMusic.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+const eventDate = new Date("June 30, 2026 19:00:00").getTime();
+
+const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        ` ${days}dias ${hours}hr ${minutes}min ${seconds}seg`;
+
+    if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "🎉 ¡Hoy es el evento!";
+    }
+}, 1000);
+
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
+
+btnMusica.addEventListener("click", () => {
+    musica.play();
+
+    btnMusica.innerHTML = "🎵 Reproduciendo...";
+    btnMusica.disabled = true;
+});
+</script>
+
+ <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
