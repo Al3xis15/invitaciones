@@ -46,6 +46,16 @@ html, body {
             cursor: pointer;
         }
 
+		#btnMusica {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
         button:hover {
             background: #ff2d55;
         }
@@ -250,6 +260,9 @@ html, body {
     <br>
 
     <button>Confirmar asistencia</button>
+<button id="btnMusica">
+    🎵 Escuchar melodía
+</button>
 
 			<audio id="musica" loop>
     <source src="recursos/marryMusic.mp3" type="audio/mpeg">
@@ -280,21 +293,15 @@ const countdown = setInterval(() => {
 
 
 
-	const musica = document.getElementById("musica");
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
 
-function iniciarMusica() {
-    musica.play()
-        .then(() => {
-            console.log("Música iniciada");
-        })
-        .catch(error => {
-            console.log("Error:", error);
-        });
+btnMusica.addEventListener("click", () => {
+    musica.play();
 
-    document.removeEventListener("pointerdown", iniciarMusica);
-}
-
-document.addEventListener("pointerdown", iniciarMusica, { once: true });
+    btnMusica.innerHTML = "🎵 Reproduciendo...";
+    btnMusica.disabled = true;
+});
 </script>
 
 	
