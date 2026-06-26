@@ -26,6 +26,16 @@ html, body {
     height: 100%;
 }
 
+#btnMusica {
+    padding: 15px 27px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
 .contenedor {
     min-height: 100vh;
     display: flex;
@@ -327,17 +337,15 @@ const countdown = setInterval(() => {
     }
 }, 1000);
 
-const musica = document.getElementById('musica');
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
 
-function iniciarMusica() {
+btnMusica.addEventListener("click", () => {
     musica.play();
 
-    document.removeEventListener('click', iniciarMusica);
-    document.removeEventListener('touchstart', iniciarMusica);
-}
-
-document.addEventListener('click', iniciarMusica);
-document.addEventListener('touchstart', iniciarMusica);
+    btnMusica.innerHTML = "🎵 Reproduciendo...";
+    btnMusica.disabled = true;
+});
 </script>
 
  <script src="js/bootstrap.bundle.min.js"></script>
