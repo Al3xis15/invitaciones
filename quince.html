@@ -46,6 +46,21 @@ html, body {
     display: block;
 }
 
+		.link-mapa{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color: white;
+}
+
+.icono-maps{
+    width: 1rem;
+    height: 1rem;
+}
+
 .btn-confirmar{
     display: inline-flex;
     align-items: center;
@@ -358,12 +373,15 @@ html, body {
 
     <img src="recursos/sumiya.png" class="foto-lugar">
 
-    <div>
-	   <img src="recursos/nota.svg" alt="" class="maps">
-        <a href="https://maps.app.goo.gl/54nLaTaRcMG64sTn6" target="_blank">
-            → Ver Mapa 
-        </a>
-    </div>
+    <a href="https://maps.app.goo.gl/54nLaTaRcMG64sTn6"
+       target="_blank"
+       class="link-mapa">
+
+        <img src="recursos/maps.svg" alt="" class="icono-maps">
+        <span>Ver Mapa</span>
+
+    </a>
+
 </div>
 
     <br>
