@@ -42,18 +42,35 @@
         }
 
         .tercera-seccion {
-            background: url("recursos/frida.png") center/cover no-repeat;
-            padding: 60px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* Si falta fondo abajo en pantallas largas de celular, el fondo #1a002c (morado oscuro) rellenará de forma invisible */
+    background: #1a002c url("recursos/frida.png") center/cover no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
 
-       .cuarta-seccion{
-    min-height: 100vh;
-    background: url("recursos/4itinerario.png") center center/contain no-repeat;
-    background-color: #ffffff;
+.cuarta-seccion {
+    /* Usamos un fondo base oscuro para amarrar con el itinerario y evitar el blanco */
+    background: #121212 url("recursos/4itinerario.png") center/top no-repeat;
+    background-size: cover;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Media query específica para corregir el estiramiento del fondo en móviles */
+@media (max-width: 768px) {
+    .tercera-seccion {
+        background-size: 100% 100%; /* Fuerza a la imagen a cubrir verticalmente sin dejar aire */
+        padding: 45px 15px;
+    }
+    
+    .cuarta-seccion {
+        background-size: 100% 100%; /* Evita que el itinerario deje bandas blancas abajo */
+        padding: 35px 15px;
+    }
 }
 
 /* Contenedor principal del texto */
